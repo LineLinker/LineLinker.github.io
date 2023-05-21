@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/nav.css">
+	<link rel="stylesheet" href="css/body.css">
+	<title>Search</title>
+</head>
+<style>
+/*滚动文字*/
+.gundong{
+		padding: 80px;
+		padding-left: 300px;
+		padding-right: 300px;
+		padding-bottom: 10px;
+}
+/*表单设定*/
+.formset{
+		margin-top: 20px;
+		padding-left: 300px;
+}
+.text {
+		display: inline-block;/*设置元素的显示方式为行内块状元素*/
+		border: 0;
+		width: 600px;
+		height: 36px;
+		font-family: "Consolas";
+		font-size: 14px;
+		outline: none;
+		border: 2px solid #3D343A;/*最后跟的是边框颜色*/
+}
+.search{
+		width: 150px;
+		height: 38px;
+		border: 0;
+		outline: none;
+		cursor: pointer;
+		text-align: center;
+		line-height: 40px;
+		background-color: #3D343A;
+		font-family: "Consolas";
+		color: white;
+}
+/*标题并为其加上渐变效果*/
+.sec3{
+	padding-left: 45%;
+	margin-top: 30px;
+	font-size: 40px;
+    font-weight: bolder;
+    -webkit-background-clip: text;/*背景图给到文本上*/
+    background-image: linear-gradient(90deg, #ff6b6b, #ffc5c5, #a3f7bf, #00bfff, #fc00ff);
+    background-size: 800%;
+    animation: gradient 20s infinite linear;
+    color: transparent;
+    line-height: 40px;
+}
+@keyframes gradient{
+    100%{
+        background-position: -800% 0%;
+    }
+}
+/*卡片区*/
+.pt{
+    /* 设置 flex 容器的主轴为垂直方向*/
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    width: 250px;
+    float: left;/* 设置浮动方式为左浮动*/
+    margin: 80px 0px 0px 200px;
+    background: rgba(219, 235, 241,0.8);
+    box-shadow: 0 0 15px rgb(59, 73, 95);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.5s ease 0s;/*使放大效果更加平滑*/
+}
+.pt:hover{
+    cursor: pointer;
+    transform: scale(1.1);/*放大卡片*/
+}
+.pt img{
+    height: 180px;
+    width: 250px;
+    background-size: cover;
+    transition: all 0.5s ease 0s;
+    opacity: 0.8;/*透明度*/
+}
+.pt img:hover{
+    transform: scale(1.1);
+}
+.pt .txt{
+    height: 310px;
+    width: 200px;
+    overflow: hidden;/*隐藏溢出的部分*/
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+.pt .txt h3{
+    text-align: center;
+    font-size: 3em;
+    color: rgb(28, 44, 68);
+    height: 25px;
+    line-height: 25px;
+}
+.pt .txt p{
+    margin-top: -2px;/*去掉段落上方的空白*/
+    word-wrap: break-word;/*当单词太长，超出一行时，自动换行*/
+    color: purple;
+}
+/*横向卡片*/
+.ab{
+	display: flex;
+    flex-direction: column;
+    height: 200px;
+    width: 400px;
+    float: left;
+    margin: 50px 50px 0px 0px;
+    background: rgba(219, 235, 241,0.8);
+    box-shadow: 0 0 15px rgb(59, 73, 95);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.5s ease 0s;/*使放大效果更加平滑*/
+}
+.ab:hover{
+    transform: scale(1.1);/*放大卡片*/
+}
+.ab .txt{
+    width: 300px;
+    margin: 0 50px 0 50px;
+}
+</style>
+<body>
+	<nav class="homenav">
+        <div class="navtitle"><strong>Yye</strong>|MY WORKS</div>
+        <a href="Home.html">HOME</a>
+        <a href="Search.html">SEARCH</a>
+        <a href="Show.html">SHOW</a>
+        <a href="Space.html">SPACE</a>
+        <a href="Other.html">OTHER</a>
+        <div class="navanim search"></div>
+        <div class="none"></div>
+    </nav>
+    <main>
+    	<section>
+    		<div class="gundong" id="01">
+    		<marquee behavior="scroll" direction="left"><font size="4" color="hotpink">&nbsp;&nbsp;&nbsp;&nbsp;今天要了解些什么呢？&nbsp;&nbsp;&nbsp;&nbsp;</font></marquee>
+    		</div>
+    	</section>
+    	<section>
+    		<table width="1000px" align="center">
+			<tr height="150px" style="background-color: rgb(152, 170, 200);" >
+			<td colspan="3" align="center">
+				<!-- 使用表单 -->
+				<form target="_blank" method="get" action="https://www.baidu.com/s">
+					<input type="text" placeholder="使用百度搜索" name="word" autocomplete="off" class="text" />  <!-- autocomplete off关闭搜索框自动填充功能 -->
+					<input type="submit" value="Start" class="search">
+				</form></td></tr></table>
+    	</section>
+    	<section>
+    		<div class="sec3">有用的网站</div>
+    	</section>
+    	<section>
+    		<a href="https://www.bilibili.com">
+            <div class="pt">
+                <div style="overflow: hidden;"><img src="https://static.hd1080.pro/wp-content/uploads/2021/09/20210923091105155.jpg"></div>
+                <div class="txt">
+                    <h3>哔哩哔哩</h3>
+                    <p>哔哩哔哩是一个视频弹幕网站，也是年轻人的学习社区，提供了各种教育、科技、文化等领域的视频内容。</p>
+                </div>
+            </div>
+        	</a>
+        	<a href="https://github.com/">
+            <div class="pt">
+                <div style="overflow: hidden;"><img src="https://th.bing.com/th/id/OIP.GHPQTvkT3TqCadzvWvCZFgAAAA?pid=ImgDet&rs=1"></div>
+                <div class="txt">
+                    <h3>Github</h3>
+                    <p>Github是一个基于Git的代码托管平台，也是开源软件的社区，提供了代码管理、协作开发、项目托管等功能。</p>
+                </div>
+            </div>
+        	</a>
+        	<a href="https://www.zhihu.com">
+            <div class="pt">
+                <div style="overflow: hidden;"><img src="https://pic3.zhimg.com/v2-39378d60fe06c04e97b41f7d2111edfa_r.jpg"></div>
+                <div class="txt">
+                    <h3>知乎</h3>
+                    <p>知乎是一个在线问答社区，你可以在这里提出任何问题，也可以回答别人的问题。知乎汇聚了各行各业的专业人士，你可以从他们的经验和见解中学习到很多有用的知识。</p>
+                </div>
+            </div>
+        	</a>
+        	<a href="https://www.google.com">
+            <div class="pt">
+                <div style="overflow: hidden;"><img src="https://bkimg.cdn.bcebos.com/pic/6d81800a19d8bc3ef3656f908d8ba61ea8d3457e?x-bce-process=image/watermark,image_d2F0ZXIvYmFpa2UyNzI=,g_7,xp_5,yp_5"></div>
+                <div class="txt">
+                    <h3>Google</h3>
+                    <p>Google是一个全球领先的互联网公司，它提供了强大的搜索引擎、多样的在线服务和创新的技术产品。你可以用Google搜索任何你想知道的信息，也可以利用Google的工具和平台来学习、工作和娱乐。</p>
+                </div>
+            </div>
+        	</a>
+        	<a href="https://tieba.baidu.com/">
+            <div class="pt">
+                <div style="overflow: hidden;"><img src="https://img0.baidu.com/it/u=344843687,2870331517&fm=253&fmt=auto&app=138&f=PNG?w=547&h=300"></div>
+                <div class="txt">
+                    <h3>百度贴吧</h3>
+                    <p>百度贴吧是一个基于兴趣的社区平台，你可以在这里找到你感兴趣的吧，和志同道合的人交流、分享、讨论。百度贴吧涵盖了各种主题，你可以在这里学习到很多知识，也可以展示自己的才华和见解。</p>
+                </div>
+            </div>
+        	</a>
+        	<a href="#02">
+            <div class="pt" id="02">
+                <div style="overflow: hidden;"></div>
+                <div class="txt">
+                    <h3>待补充</h3>
+                    <p align="center">Loading...</p>
+                </div>
+            </div>
+        	</a>
+        	<a href="#03">
+            <div class="pt" id="03">
+                <div style="overflow: hidden;"></div>
+                <div class="txt">
+                    <h3>待补充</h3>
+                    <p align="center">Loading...</p>
+                </div>
+            </div>
+        	</a>
+        	<a href="#04">
+            <div class="pt" id="04">
+                <div style="overflow: hidden;"></div>
+                <div class="txt">
+                    <h3>待补充</h3>
+                    <p align="center">Loading...</p>
+                </div>
+            </div>
+        	</a>
+        	<a href="#05">
+            <div class="pt" id="05">
+                <div style="overflow: hidden;"></div>
+                <div class="txt">
+                    <h3>待补充</h3>
+                    <p align="center">Loading...</p>
+                </div>
+            </div>
+        	</a>
+    	</section>
+    	<section>
+    		<div class="ab" style="margin-left:575px;">
+            <div class="txt">
+                <h2 align="center">来听一段纯音乐</h2>
+                <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="https://music.163.com/outchain/player?type=2&id=1887767473&auto=0&height=66"></iframe>
+                <!--下面的资源已失效
+                <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=280 height=86 src="https://music.163.com/outchain/player?type=2&id=2021188979&auto=0&height=66"></iframe>-->
+                <p align="center">网易云外链播放器 加载失败即资源失效</p>
+            </div>
+        </div>
+    	</section>
+    	<footer class="foot">
+            <p><a href="#01" style="text-decoration: none; color: cyan;">点我回顶部</a></p>
+    		<p>搜索资源页面 &nbsp;&nbsp; ©Create By YYE</p>
+    	</footer>
+    </main>
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/body.css">
+    <title>Welcome</title>
+</head>
+<style>
+/*预加载动画*/
+#over{
+    position: fixed;
+    top:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    z-index: 100000;
+    background:linear-gradient(90deg, #ff6b6b, #ffc5c5, #a3f7bf, #00bfff, #fc00ff);
+    filter: brightness(0.9);/*亮度降低*/
+    background-size: 400%;
+    animation: gradient 10s ease infinite;
+    transition: ease-in-out 2s;
+}
+@keyframes gradient {
+    0% {
+      background-position: 0%;
+    }
+    100% {
+      background-position: -400%;
+    }
+}
+#preloader {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background-color: white;
+    text-align: center;
+}
+#progress {
+    width: 0;
+    height: 100%;
+    background-color: rgb(255, 174, 201);
+    transition: width 0.1s ease-out;
+}
+#percent {
+    position: absolute;
+    top: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 4em;
+    color: black;
+}
+/*隐藏动画*/
+.hide{
+    transform: translateX(-100vw);
+    transition: ease-in-out 0.5s;
+    transition-delay: 0.5s;
+}
+/*标题容器大小设定*/
+.titlesize{
+    height: 100vh;
+    background-size: 1540px;
+    width: 100vw;
+}
+/*标题文字动画*/
+.titleani{
+     /* 设置标题动画的宽度和内边距，字体大小和样式，颜色，位置和边框样式 */
+    width: 1540px;
+    padding:275px;
+    font-size: 100px;
+    font-family: "微软雅黑";
+    font-weight: bolder;
+    color: rgba(49, 70, 87,0.2);
+    position: relative;
+    -webkit-text-stroke:0.3vw #383d52;/* 设置文字描边样式 */
+}
+.titleani::before{
+     /* 在标题之前插入伪元素，设置其内容和样式，颜色，描边和动画效果 */
+    content: attr(data-text);/* 设置元素的内容为 data-text 属性中的值 */
+    position: absolute;
+    top: 275px;
+    left: 275px;
+    width: 0;
+    height: 150px;
+    color: rgba(164,195,238,0.8);
+    -webkit-text-stroke:0vw #383d52;/*描边*/
+    border-right: 2px solid rgba(122,171,240,0.6);
+    overflow: hidden;
+    animation: animate 6s linear infinite;        
+}
+.titleani::after {
+    /* 在标题之后插入伪元素，设置其样式，高度，背景色和动画效果 */
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: rgba(98, 201, 248,0.6);
+    animation: animate 4s linear infinite;
+}
+@keyframes animate{
+    /*文字覆盖动画*/
+    0%,100%{
+        width: 0;
+    }
+    50%,80%{
+        width: 1000px;;
+    }
+} 
+</style>
+<body>
+    <div id="over">
+        <div id="preloader">
+            <div id="progress">
+                <div id="percent">0%</div>
+            </div>
+        </div>
+    </div>
+    <nav class="homenav">
+        <div class="navtitle"><strong>Yye</strong>|MY WORKS</div>
+        <a href="Home.html">HOME</a>
+        <a href="Search.html">SEARCH</a>
+        <a href="Show.html">SHOW</a>
+        <a href="Space.html">SPACE</a>
+        <a href="Other.html">OTHER</a>
+        <div class="navanim home"></div>
+        <div class="none"></div>
+    </nav>
+    <main>
+        <section>
+            <div class="titlesize">
+                <div class="titleani" id="headtitle" data-text="T h i n k i n g . . .">T h i n k i n g . . .</div>
+            </div>
+        </section>
+        <footer class="foot" id="1">
+            <p><a onclick="play()" href="#1">Vanitas Vanitatum Et Omnia Vanitas</a></p>
+            <p>©Create By YYE</p>
+        </footer>
+    </main>
+</body>
+<script>
+    var audio = document.createElement("audio");
+    var i=1;
+    function play(){
+        audio.pause();/*重复点击时，取消上次的播放*/
+        if (i) {
+            audio.src = "http://cdnimg.gamekee.com/wiki2.0/images/w_0/h_0/829/43637/2022/7/9/962001.ogg";
+            audio.play();
+            i=0;
+        }
+        else{
+            audio.src = "http://cdnimg.gamekee.com/wiki2.0/images/w_0/h_0/829/43637/2022/6/13/995420.wav";
+            audio.play();
+            i=1;
+        }
+    }
+    /*主界面文字切换*/
+    var div = document.getElementById("headtitle"); //获取div元素
+    //定义各种状态的文字
+    var text = ["H e l l o W o r l d","L o a d i n g . . .", "T h i n k i n g . . .","W e l c o m e ! "]; 
+    var index = 0; //定义一个索引变量
+    function changeText() { //定义一个切换文字的函数
+        div.innerHTML = text[index]; //修改div里面的文字
+        div.setAttribute("data-text",text[index]);
+        index = (index + 1) % text.length; //切换索引值，取余数防止越界
+        setTimeout(changeText, 5000); //设置延时函数，并递归调用自身
+    }
+    changeText(); //调用函数
+    /*开屏加载动画*/
+    window.onload = function() { //当窗口加载完成时执行的函数
+    var preloader = document.getElementById("preloader"); //获取id为"preloader"的元素
+    var progress = document.getElementById("progress"); //获取id为"progress"的元素
+    var percent = document.getElementById("percent"); //获取id为"percent"的元素
+    var over = document.getElementById("over"); //获取id为"over"的元素
+    var duration = Math.floor(Math.random() * 5000); //生成一个0-4999的随机整数，作为预加载时长（毫秒）
+    var interval = duration / 100; //将预加载时长除以100，得到每次更新进度条的间隔时间
+    var count = 0; //初始化进度条的进度为0%
+    var timer = setInterval(function() { //定时器，每隔interval毫秒执行一次函数
+        count++; //进度条进度增加1%
+        progress.style.width = count + "%"; //更新进度条宽度
+        percent.innerHTML = count + "%"; //更新进度条百分比
+        if (count >= 100) { //当进度条进度达到100%时
+        clearInterval(timer); //清除定时器
+        setTimeout(function() { //延时500毫秒执行匿名函数
+            preloader.style.display = "none"; //隐藏预加载页面
+            over.classList.add('hide'); //为id为"over"的元素添加class为"hide"，使其隐藏
+         }, 500);
+        }
+    }, interval);
+};
+
+</script>
+</html>
