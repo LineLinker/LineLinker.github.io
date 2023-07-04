@@ -1,271 +1,165 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="referrer" content="no-referrer">
-    <title>Login</title>
-</head>
-<style>
-body{
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    width: 100vw;
-    overflow: hidden;/*多余部分隐藏掉*/
-}
-/*loading框*/
-.preloader{
-    position: fixed; /* 设置为固定定位，可以让预加载器在浏览器窗口中固定显示 */
-    top:0; /* 距离窗口顶部的距离为0 */
-    display: flex; /* 设置为弹性盒子布局，可以让里面的元素水平和垂直居中 */
-    justify-content: center; /* 水平居中 */
-    align-items: center; /* 垂直居中 */
-    width: 100%; 
-    height: 100vh; 
-    background: rgba(255,255,255,0.8); /* 白色半透明 */
-    z-index: 100000; /* 最上层显示 */
-}
-/*定义预加载器中的元素，用于使其水平垂直居中 */
-.center{
-    position: absolute; /* 绝对定位*/
-    top: 50%; 
-    left: 50%; 
-    transform: translate(-50%,-50%); /* 位移，将其向上、向左移动50%，使其水平垂直居中 */
-}
-/* 预加载器中的环形元素 */
-.ring{
-    width: 300px; 
-    height: 300px; 
-    border-radius: 50%; 
-    box-shadow: 0 4px 0 #262626; /* 盒子阴影属性 添加一条底部边框 */
-    background:transparent; /* 背景色透明 */
-    animation: ani1 1s linear infinite;
-}
-/* 预加载器中的文本元素 */
-.text{
-    width: 300px;
-    height: 300px;
-    border-radius: 50%; /* 设置圆角半径为50% */
-    position: absolute; /* 绝对定位*/
-    top: 0; /* 上边距为0，让文本元素覆盖在环形元素上面 */
-    left: 0; /* 左边距为0，让文本元素覆盖在环形元素上面 */
-    text-align: center; /* 文本水平*/
-    line-height: 300px;
-    font-size: 3em;
-    background: transparent;
-    box-shadow: 0 0 5px rgba(0,0,0,.2);
-    -webkit-background-clip: text;/*背景图给到文本上*/
-    background-image: linear-gradient(90deg, #ff6b6b, #ffc5c5, #a3f7bf, #00bfff, #fc00ff);
-    background-size: 800%;/*将渐变颜色的大小设置为800%*/
-    animation: gradient 30s infinite linear;
-    color: transparent;
-}
-@keyframes ani1 {
-    /*动画实现loading框外圈旋转效果*/
-    0%{
-        transform: rotate(0deg);
-    }
-    100%{
-        transform: rotate(360deg);
-    }
-}
-.hide{/*隐藏loading预加载框*/
-    transform: translateY(-100vh);
-    transition: ease-in-out 2s;
-    transition-delay: 1s;
-}
-/*背景*/
-.back{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    background-image: url(https://img.gejiba.com/images/3de4aed1ae7f38db46c5364b0fabc778.png);
-    background-repeat: no-repeat;
-    background-size: 110%;
-    background-position: center;
-    overflow: hidden;
-}
-/*登录框*/
-.box {
-    width: 350px;
-    height: 350px;
-    /* 给上、左、下、右四条边分别设置不同的边框样式和透明度 */
-    border-top: 1px solid rgba(255,255,255,0.5);
-    border-left: 1px solid rgba(255,255,255,0.5);
-    border-bottom: 1px solid rgba(255,255,255,0.3);
-    border-right: 1px solid rgba(255,255,255,0.3);
-    /* 设置背景模糊效果 */
-    backdrop-filter: blur(2px);
-    background: rgba(50,50,50,0.2);
-    /* 设置flex布局，垂直居中 */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-}
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<link rel="shortcut icon" href="IndexImg/logo1.ico"> 
+		<title>Welcome</title>
+	</head>
+	<body>
+		<div class="section">
+			<div class="divide">
+				<div class="toki"></div>
+				<div class="container">
+					<h1 class="section-title">Index</h1>
+					<div class="con">
+						<a href="WebWork/Login.html"><span>H5课设</span></a>
+						<a href="AndroidWork/Introduce.html"><span>Android</span></a>
+						<a href="Remix/PicShow.html"><span>PicShow</span></a>
+						<a href="Remix/BlogMain.html"><span>Blog</span></a>
+						<a href="#"><span>Loading...</span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			body{
+				background-image: url('IndexImg/hesha.gif');
+				background-repeat: no-repeat;
+				background-size: cover;
+				overflow: hidden;
+				width: 1080px;
+    			height: 720px; 
+			}
+			.section {
+				background:rgba(33,33,33,0.8);
+				width: 100vw;
+    			height: 100vh; 
+			}
+			.section-title {
+				text-align: center;
+				color: #ddd;
+				font-family: Segoe Print;
+				font-size: 100px;
+			}
+			.border{
+				width: 250px;
+				height: 1px;
+				background: #82ccdd;
+				margin-top: -30px;
+				margin-left: 35%;
+			}
+			.divide{
+				height: 800px;
+				width: 100%;
+				display: flex;
+			}
+			.toki{
+				height: 800px;
+				flex-basis: 30%;
+				background-image: url("IndexImg/Toki.png");
+				background-repeat: no-repeat;
+				background-size: cover;
+			}
+			.container {
+				height: 400px;
+				flex-basis: 70%;
+				display: flex;
+				flex-direction: column;
+				flex-wrap:nowrap;
+			}
+	/*特效按钮*/
+	.con{
+			margin-top: 90px;
+			margin-left: 40px; 
 
-/*login文字特效*/
-.effect{
-	margin-bottom: 30px;
-	font-size: 40px;
-    font-weight: bolder;
-    -webkit-background-clip: text;/*背景图给到文本上*/
-    background-image: linear-gradient(90deg , rgba(98, 201, 248,0.6),rgba(243, 111, 255, 0.6),rgba(247, 129, 129, 0.6),rgba(241, 239, 104, 0.6),rgba(117, 226, 84, 0.6),rgba(98, 201, 248,0.6));
-    background-size: 800%;
-    animation: gradient 30s infinite linear;
-    color: transparent;
-    line-height: 40px;
-}
-@keyframes gradient{
-    100%{
-        background-position: -800% 0%;
-    }
-}
-/*输入框的样式*/
-.box .input-box {
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-    margin-bottom: 10px;
-}
-/*label标签样式*/
-.box .input-box label {
-    font-size: 13px;
-    color: rgba(255,255,255,0.9);
-    margin-bottom: 5px;
-}
-/*输入框*/
-.box .input-box input {
-    letter-spacing: 1px;
-    font-size: 14px;
-    box-sizing: border-box;
-    width: 250px;
-    height: 35px;
-    border-radius: 5px;
-    border: 1px solid rgba(255,255,255,0.5);
-    background: rgba(255,255,255,0.2);
-    outline: none;
-    padding: 0 12px;
-    color: rgba(255,255,255,0.9);
-    transition: 0.2s;
-}
-/*按钮框*/
-.box .btn-box {
-    width: 250px;
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-}
-/*按钮框*/
-.box .btn-box  div {
-    margin-top: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-/*游客登录按钮*/
-.box .btn-box  a {
-    outline: none;
-    display: block;
-    width: 80px;
-    color: white;
-    text-align: end;
-    text-decoration: none;
-    font-size: 14px;
-
-}
-/*按钮框里面的button*/
-.box .btn-box  div  button {
-    outline: none;
-    margin-top: 10px;
-    display: block;
-    font-size: 14px;
-    border-radius: 5px;
-    transition: 0.2s;
-    cursor: pointer;/*鼠标变为手*/
-}
-/*第一个孩子*/
-.box .btn-box  div  button:nth-of-type(1) {
-    width: 120px;
-    height: 35px;
-    color: rgba(255,255,255,0.9);
-    border: 1px solid rgba(192, 119, 91, 0.7);
-    background: #405268;
-}
-/*第二个孩子*/
-.box .btn-box  div  button:nth-of-type(2) {
-    width: 120px;
-    height: 35px;
-    margin-left: 0px;
-    color: rgba(255,255,255,0.9);
-    border: 1px solid rgba(192, 119, 91, 0.7);
-    background: #405268;
-}
-/*鼠标放到按钮上时由效果*/
-.box .btn-box  div  button:hover {
-    border: 1px solid rgba(251, 128, 71, 0.7);
-    background: #3D343A;
-}
-</style>
-<body>
-    <div class="preloader" id="preloader">
-        <div class="center">
-            <div class="text">Loading...</div>
-            <div class="ring"></div>
-        </div>
-    </div>
-    <div class="back" id="back">
-        <div class="box" id="box">
-        <div class="effect">LOGIN</div>
-        <div class="input-box">
-            <label>账号</label>
-            <input type="text" id="zh">
-        </div>
-        <div class="input-box">
-            <label>密码</label>
-            <input type="password" id="mm">
-        </div>
-        <div class="btn-box">
-            <div>
-                <button onclick="login()">登录</button>
-                <button><a href="Home.html">游客登录</a></button>
-            </div>
-        </div>
-    </div>   
-</body>
-<script>
-    /*动态移动效果*/
-    var back=document.getElementById('back');
-    window.onmousemove = function(event){
-        var x=-event.clientX/25;
-        var y=-event.clientY/25;
-        back.style.backgroundPositionX = x+"px";
-        back.style.backgroundPositionY = y+"px";
-    }
-    /*登录验证*/
-    var zh=document.getElementById('zh');
-    var mm=document.getElementById('mm');
-    function login(){
-        if(zh.value==""||mm.value==""){
-            alert("账号或密码不能为空");
-            return false;
-        }
-        else if(zh.value!="123456"||mm.value!="123456"){    
-            alert("账号或密码错误(可以选择游客登录)");
-            return false;
-        }
-        else{
-            alert("欢迎回来");
-            //用户名和密码正确则跳转网页
-            location.href = "Home.html";
-        }
-    }
-    /*loading加载框*/
-    window.onload = function(){
-    setTimeout(function(){document.getElementById('preloader').classList.add('hide')}, 100);}
-</script>
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-wrap: wrap;
+	}
+	.con a{
+ 			position: relative;
+			display: inline-block;
+			padding: 15px 30px;
+			border: 2px solid #0f0;
+			margin: 40px;
+			font-weight:600;
+			text-decoration: none;
+			letter-spacing: 2px;
+			color: #fff;
+			-webkit-box-reflect:below 0px linear-gradient(transparent,#0002);
+			transition: 0.5s;
+			transition-delay: 1.5s;
+	}
+	.con a:hover{
+		transition-delay: 1.5s;
+		color: #000;
+		box-shadow: 0 0 10px #0f0,0 0 20px #0f0,
+		0 0 40px #0f0,0 0 80px #0f0,0 0 1600px #0f0,
+	}
+	.con a span{
+		position: relative;
+		z-index: 100;
+	}
+	.con a:nth-child(2){
+		filter: hue-rotate(80deg);/*改变颜色，在色盘上旋转*/
+	}
+	.con a:nth-child(3){
+		filter: hue-rotate(160deg);
+	}
+	.con a:nth-child(4){
+		filter: hue-rotate(240deg);
+	}
+	.con a:nth-child(5){
+		filter: hue-rotate(320deg);
+	}
+	.con a::before{
+		content: '';
+		position: absolute;
+		left: -20px;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 20px;
+		height: 2px;
+		background:#0f0;
+		box-shadow: 5px -8px 0 #0f0,5px 8px 0 #0f0; 	 
+		transition: width 0.5s,left 0.5s,height 0.5s,box-shadow 0.5s;
+		transition-delay: 1s,0.5s,0s,0s;
+	}
+	.con a:hover::before{
+		width: 60%;
+		height: 100%;
+		left: -2px;
+		box-shadow: 5px 0 0 #0f0,5px 0 0 #0f0; 	
+		transition-delay: 0s,0.5s,1s,1s;
+	}
+	.con a::after{
+		content: '';
+		position: absolute;
+		right: -20px;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 20px;
+		height: 2px;
+		background:#0f0;
+		box-shadow: -5px -8px 0 #0f0,-5px 8px 0 #0f0; 	 
+		transition: width 0.5s,left 0.5s,height 0.5s,box-shadow 0.5s;
+		transition-delay: 1s,0.5s,0s,0s;
+	}
+	.con a:hover::after{
+		width: 60%;
+		height: 100%;
+		right: -2px;
+		box-shadow: -5px 0 0 #0f0,-5px 0 0 #0f0; 	 
+		transition-delay: 0s,0.5s,1s,1s;
+	}
+	</style>
 </html>
