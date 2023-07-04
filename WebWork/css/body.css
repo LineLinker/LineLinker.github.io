@@ -1,0 +1,45 @@
+@charset "utf-8";
+body{
+    margin: 0;
+    padding: 0;
+    /*background-image: url("../image/background.png");*/
+    /*使用老王图床，失效请使用本地地址*/
+    background-image: url('https://img.gejiba.com/images/864f5b9c1be50dbf3be301e877fdf377.png');
+    background-attachment: fixed; 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    overflow-x: hidden;
+}
+/*重写右侧滑动条*/
+::-webkit-scrollbar{
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb{
+    background: rgba(91, 105, 136, 0.8);
+}
+
+::-webkit-scrollbar-track{
+    background: rgb(194, 213, 241);
+}
+/*底部栏*/
+.foot{
+    margin-top: 30px;
+    width: 100vw;
+    height: 60px;
+    float: left;
+    clear: both;/*清除浮动*/
+    text-align: center;
+    margin-bottom: 0px;
+    background-color: rgba(84, 132, 161, 0.8);
+}
+.foot p{
+    line-height: 10px;
+    color: rgb(28, 43, 43);
+}
+
+.foot a{
+    text-decoration:none; 
+    color: cyan;
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/body.css">
+    <link rel="shortcut icon" href="../IndexImg/logo1.ico">
+    <title>Welcome</title>
+</head>
+<style>
+/*标题容器大小设定*/
+.titlesize{
+    height: 100vh;
+    background-size: 1540px;
+    width: 100vw;
+}
+/*标题文字动画*/
+.titleani{
+     /* 设置标题动画的宽度和内边距，字体大小和样式，颜色，位置和边框样式 */
+    width: 1540px;
+    padding:275px;
+    font-size: 100px;
+    font-family: "微软雅黑";
+    font-weight: bolder;
+    color: rgba(49, 70, 87,0.2);
+    position: relative;
+    -webkit-text-stroke:0.3vw #383d52;/* 设置文字描边样式 */
+}
+.titleani::before{
+     /* 在标题之前插入伪元素，设置其内容和样式，颜色，描边和动画效果 */
+    content: attr(data-text);/* 设置元素的内容为 data-text 属性中的值 */
+    position: absolute;
+    top: 275px;
+    left: 275px;
+    width: 0;
+    height: 150px;
+    color: rgba(164,195,238,0.8);
+    -webkit-text-stroke:0vw #383d52;/*描边*/
+    border-right: 2px solid rgba(122,171,240,0.6);
+    overflow: hidden;
+    animation: animate 6s linear infinite;        
+}
+.titleani::after {
+    /* 在标题之后插入伪元素，设置其样式，高度，背景色和动画效果 */
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: rgba(98, 201, 248,0.6);
+    animation: animate 4s linear infinite;
+}
+@keyframes animate{
+    /*文字覆盖动画*/
+    0%,100%{
+        width: 0;
+    }
+    50%,80%{
+        width: 1000px;;
+    }
+} 
+</style>
+<body>
+    <nav class="homenav">
+        <div class="navtitle"><strong>Yye</strong>|MY WORKS</div>
+        <a href="Home.html">HOME</a>
+        <a href="Search.html">SEARCH</a>
+        <a href="Show.html">SHOW</a>
+        <a href="Space.html">SPACE</a>
+        <a href="Other.html">OTHER</a>
+        <div class="navanim home"></div>
+        <div class="none"></div>
+    </nav>
+    <main>
+        <section>
+            <div class="titlesize">
+                <div class="titleani" id="headtitle" data-text="T h i n k i n g . . .">T h i n k i n g . . .</div>
+            </div>
+        </section>
+        <footer class="foot" id="1">
+            <p><a onclick="play()" href="#1">Vanitas Vanitatum Et Omnia Vanitas</a></p>
+            <p>©Create By YYE</p>
+        </footer>
+    </main>
+</body>
+<script>
+    var audio = document.createElement("audio");
+    var i=1;
+    function play(){
+        audio.pause();/*重复点击时，取消上次的播放*/
+        if (i) {
+            audio.src = "http://cdnimg.gamekee.com/wiki2.0/images/w_0/h_0/829/43637/2022/7/9/962001.ogg";
+            audio.play();
+            i=0;
+        }
+        else{
+            audio.src = "http://cdnimg.gamekee.com/wiki2.0/images/w_0/h_0/829/43637/2022/6/13/995420.wav";
+            audio.play();
+            i=1;
+        }
+    }
+    /*主界面文字切换*/
+    var div = document.getElementById("headtitle"); //获取div元素
+    //定义各种状态的文字
+    var text = ["H e l l o W o r l d","L o a d i n g . . .", "T h i n k i n g . . .","W e l c o m e ! "]; 
+    var index = 0; //定义一个索引变量
+    function changeText() { //定义一个切换文字的函数
+        div.innerHTML = text[index]; //修改div里面的文字
+        div.setAttribute("data-text",text[index]);
+        index = (index + 1) % text.length; //切换索引值，取余数防止越界
+        setTimeout(changeText, 5000); //设置延时函数，并递归调用自身
+    }
+    changeText(); //调用函数
+</script>
+</html>

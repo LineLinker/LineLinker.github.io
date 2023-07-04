@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Other</title>
+	<link rel="stylesheet" href="css/nav.css">
+	<link rel="shortcut icon" href="../IndexImg/logo1.ico">
+<body>
+	<nav class="homenav" >
+        <div class="navtitle"><strong>Yye</strong>|MY WORKS</div>
+        <a href="Home.html">HOME</a>
+        <a href="Search.html">SEARCH</a>
+        <a href="Show.html">SHOW</a>
+        <a href="Space.html">SPACE</a>
+        <a href="Other.html">OTHER</a>
+        <div class="navanim other"></div>
+        <div class="none"></div>
+    </nav>
+    <div id="scroll1">
+    	<div class="geshi" id="q1">
+			<div class="loader">
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<div class="con1">
+				<div class="top wenzijianbian">HTML5网络编程技术课程设计</div>
+        		<div class="divide">
+            		<div class="left">
+           				<div class="pt">
+           					<a style="text-decoration: none;" href="https://www.bilibili.com/video/BV1bS4y177dx" >
+           					<h3 class="wenzijianbian">CSS参考</h3>
+                			<div style="overflow: hidden;"><img src="http://i2.hdslb.com/bfs/archive/3f9ae845710ef4eee2be27523a2c8712f91f89b9.png"></div></a>
+            			</div>
+            		</div>
+            		<div class="right">
+            			<p class="wenzijianbian"> ©CREATE BY YYE </p>
+            			<p class="wenzijianbian">其他链接</p>
+            			<button class="btn wenzijianbian" onclick="redirectTo('../index.html')">Index</button>
+            			<button class="btn wenzijianbian" onclick="redirectTo('../Remix/BlogMain.html')">Blog</button>
+            			<button class="btn wenzijianbian" onclick="redirectTo('../AndroidWork/Introduce.html')">Android</button>
+            			<button class="btn wenzijianbian" onclick="redirectTo('../Remix/PicShow.html')">Pic Show</button>
+            		</div>
+            	</div>
+			</div>
+			</div>
+		</div>
+    	<div class="bord" id="q1">
+			<div id="rot">
+				<div class="shell" >
+					<div class="wrapper">
+            	<div class="a"></div>
+            	<div class="b"></div>
+            	<div class="c"></div>
+        			</div>
+        			<div class="wrapper2">
+            	<div class="a"></div>
+            	<div class="b"></div>
+            	<div class="c"></div>
+            	<div class="d"></div>
+            	<div class="e"></div>
+            	<div class="f"></div>
+        			</div>
+        			<div class="wrapper3">
+            	<div class="a"></div>
+            	<div class="b"></div>
+            	<div class="c"></div>
+            	<div class="d"></div>
+            	<div class="e"></div>
+            	<div class="f"></div>
+        			</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+const actDiv = document.querySelector('.bord');/*查询带有该样式的标签*/
+/*当鼠标进入*/
+actDiv.addEventListener('mouseenter', () => {
+/*查询有rotID的标签，开始它的动画  rot对应三角形旋转动画*/
+  document.getElementById('rot').style.animationPlayState = 'running';
+/*开始背景渐变动画*/
+  actDiv.style.animationPlayState = 'running';
+  /*顺便更改导航栏颜色*/
+  document.querySelector('nav').style.backgroundColor='pink';
+});
+/*当鼠标离开至下半部分*/
+actDiv.addEventListener('mouseleave', () => {
+/*查询有rotID的标签，关闭它的动画*/
+  document.getElementById('rot').style.animationPlayState = 'paused';
+ /*关闭背景渐变动画*/ 
+actDiv.style.animationPlayState = 'paused';
+  document.querySelector('nav').style.backgroundColor='#400E4D';
+});
+
+//按钮跳转网页
+function redirectTo(url) {
+  window.location.href = url;
+}
+
+</script>
+<style>
+	.btn{
+		margin-top: 10px;
+		margin-left: 40px;
+		padding:10px 50px 10px 50px;
+	}
+	/*最大父容器，用来滑动对齐*/
+	#scroll1{
+		overflow-x: hidden;
+    	height: 100vh;
+		scroll-snap-type: y mandatory;/*y方向*/
+	}
+	/*附加样式，便于实现对齐效果*/
+	#q1{
+		width: 100vw;
+		height: 100vh;
+		scroll-snap-align: start;
+	}
+	/*重写右侧滑动条*/
+	::-webkit-scrollbar{
+    	width: 8px;
+	}
+	::-webkit-scrollbar-thumb{
+   		 background: rgba(91, 105, 136, 0.8);
+	}
+	::-webkit-scrollbar-track{
+    	background: rgb(194, 213, 241);
+	}
+	/*导航栏部分样式重写*/
+	nav{
+		background-color:#400E4D;
+	}
+	nav .navanim{
+		background: #B30EEA;
+	}
+	/*---第一部分*/
+	.geshi{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width:100vw;
+		height: 100vh;
+		background:#000;
+	}
+	/*文字颜色渐变通用*/
+	.wenzijianbian{
+		-webkit-background-clip: text;/*背景图给到文本上*/
+   		background-image: linear-gradient(90deg, #ff6b6b, #ffc5c5, #a3f7bf, #00bfff, #fc00ff);
+   	 	background-size: 800%;
+    	animation: gradient 20s infinite linear;
+    	color: transparent;
+	}
+	@keyframes gradient{
+    	100%{
+       		background-position: -800% 0%;
+    	}
+	}
+	/*外边框动画*/
+	.loader{
+		margin-top: 50px;
+		position: relative;
+		width: 1200px;
+		height: 600px;
+		overflow: hidden;
+	}
+	.loader span{
+		position: absolute;
+		display: block;
+	}
+	.loader span:nth-child(1){
+		top: 0;
+		left: -100%;
+		width: 100%;
+		height: 5px;
+		background:linear-gradient(90deg,transparent,#7D4083);
+		animation:animate1 1s linear infinite;
+		animation-delay: 0s;
+	}
+	@keyframes animate1 {
+		0%{
+			left:-100%;
+		}
+		100%{
+			left: 100%;
+		}
+	}
+	.loader span:nth-child(3){
+		bottom: 0;
+		left: -100%;
+		width: 100%;
+		height: 5px;	
+		background:linear-gradient(270deg,transparent,#7D4083);
+		animation:animate3 1s linear infinite;
+		animation-delay: 0s;
+	}
+	@keyframes animate3 {
+		0%{
+			left:100%;
+		}
+		100%{
+			left: -100%;
+		}
+	}
+	.loader span:nth-child(2){
+		right: 0;
+		top: -100%;
+		width: 5px;
+		height: 100%;
+		background:linear-gradient(180deg,transparent,#7D4083);
+		animation:animate2 1s linear infinite;
+		animation-delay: 0.5s;
+	}
+	@keyframes animate2 {
+		0%{
+			top:-100%;
+		}
+		100%{
+			top: 100%;
+		}
+	}
+	.loader span:nth-child(4){
+		top: 100%;
+		left: 0;
+		width: 5px;
+		height: 100%;
+		background:linear-gradient(0deg,transparent,#7D4083);
+		animation:animate4 1s linear infinite;
+		animation-delay: 0.5s;
+	}
+	@keyframes animate4 {
+		0%{
+			top:100%;
+		}
+		100%{
+			top: -100%;
+		}
+	}
+	/*第一部分内部*/
+	.con1{/*背景*/
+		width: 1200px;
+		height: 600px;
+		/*background-image: url("../image/炫酷.png");*/
+		/*使用老王图床*/
+		background-image:url("https://img.gejiba.com/images/c444aa602c7eb22543e44ddcb8e55e4e.png");
+		background-repeat: no-repeat;
+   		background-size: 1200px;
+	}
+	/*内部的顶部*/
+	.top{
+		width: 1200px;	
+		display: flex;
+		justify-content: center;
+    	align-items: center;
+		margin-top:10px;
+		margin-bottom: 10px;
+		font-size: 4em;
+		font-weight: bolder;
+	}	
+	/*下面被分为左右两部分*/
+	.divide{
+		width: 100%;
+		height:90%;
+		display: flex;
+		flex-direction: row;
+	}
+	.left{
+    	width: 400px;
+    	height: 100%;
+	}
+	/*左边卡片效果*/
+	.pt{
+    	width: 320px;
+    	margin-top: 40px;
+    	margin-left: 30px;
+    	background: rgba(253,245,253,0.7);
+    	box-shadow: 0 0 15px rgb(59, 73, 95);
+   		border-radius: 15px;
+    	overflow: hidden;
+    	transition: all 0.5s ease 0s;/*使放大效果更加平滑*/
+	}
+	.pt:hover{
+    	cursor: pointer;
+    	transform: scale(1.1);/*放大卡片*/
+	}
+	.pt h3{
+		text-align: center;
+    	font-size: 3em;
+	}
+	.pt img{
+	    height:auto;
+   	 	width: 320px;
+    	background-size: cover;
+    	transition: all 0.5s ease 0s;
+    	opacity: 0.8;
+	}
+	.right{
+		width: 800px;
+		height: 100%;
+	}
+	.right p{
+		text-align: center;
+		margin:30px;
+		font-size: 2em;
+	}
+	/*---第二部分*/
+	.bord{
+		height: 100vh;
+		width: 100vw;
+		overflow: hidden;
+        display: flex;
+        justify-content: center;
+       	background: linear-gradient(to right, #ff6e7f, #bfe9ff, #ff93b3);
+        background-size: 400%;
+    	animation: gradient1 15s linear infinite;/*延长，降低消耗*/
+    	animation-play-state: paused;
+  	}
+  	@keyframes gradient1 {
+    	0% {
+      		background-position: 0%;
+    	}
+    	100% {
+      		background-position: -400%;
+    	}
+ 	}
+	/*三角旋转*/
+ 	#rot{
+ 		animation:rot 8s infinite linear;
+ 		animation-play-state: paused;
+ 	}
+	@keyframes rot {
+  		from {
+    		transform: rotate(0deg);
+  		}
+  		to {
+    		transform: rotate(360deg);
+  		}
+	}
+	/*彭罗斯三角*/
+	.shell{
+        position: relative;
+        top: 150px;
+        left: -110px;
+    }
+    .a,.b,.c {
+        position: absolute;
+        height: 300px;
+        width: 30px;
+        background-color: #333;
+        top: 49px;
+        left: 0;
+        /*rotate(60deg) 表示对元素进行逆时针旋转 60 度。旋转中心默认是元素的中心点。
+        skew(30deg) 表示对元素进行沿着水平方向斜切 30 度。
+        斜切的变形效果是元素的左边或右边被拉长或缩短，而上下两端不变*/
+        transform: rotate(60deg) skew(30deg);
+    }
+    .b {
+        background-color: #aaa;
+        transform: rotate(180deg) skew(30deg);
+        left: 180px;
+        top: 36px;
+    }
+    .c{
+        background-color: #666;
+        transform: rotate(-60deg) skew(30deg);
+        left: 101px;
+        top: 199px;
+     }
+    .a::after,.b::after,.c::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 278px;
+            left: 165px;
+            top: -141px;
+            transform: rotate(-90deg) skew(0deg);
+            border-bottom: 23px solid transparent;
+            border-right: 20px solid #333;
+            transition: 0.5s;
+            animation: change 20s linear infinite;
+        }
+        /*三角变形动画*/
+        @keyframes change {
+        	0%,75%{
+        		height: 278px;
+            	left: 165px;
+            	top: -141px;
+        	}
+        	25%,50%{
+        		height: 290px;
+            	top: 31px;
+            	left: 76px;
+        	}
+        }
+        .b::after {
+            border-right: 20px solid #aaa;
+        }
+        .c::after {
+            border-right: 20px solid #666;
+        }
+        .wrapper2 {
+            position: absolute;
+            transform: scale(0.5);
+            margin-left: 56px;
+            margin-top: 121px;
+        }
+        .wrapper3 {
+            position: absolute;
+            transform: scale(0.22);
+            margin-left: 88px;
+            margin-top: 188px;
+        }
+        .d,.e,.f {
+            position: absolute;
+            background-color: #333;
+            width: 130px;
+            height: 25px;
+            top: 270px;
+            left: -160px;
+            transform: rotate(60deg) skew(30deg);
+        }
+        .e {
+            background-color: #666;
+            top: 400px;
+            left: 173px;
+            transform: rotate(120deg) skew(30deg);
+        }
+        .f {
+            background-color: #aaa;
+            top: 35px;
+            left: 100px;
+            transform: rotate(180deg) skew(30deg);
+        }
+</style>
+</html>
