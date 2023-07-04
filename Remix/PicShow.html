@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>My Beautiful Pic Show</title>
+	<link rel="shortcut icon" href="../IndexImg/logo1.ico"> 
+	<link rel="stylesheet" href="css/PicShow.css">
+</head>
+
+<!-- 主体  由于body特性 盒子 要使其全部贴齐边需要margin为0 -->
+<body class="bodys">
+	<div id="app"><!-- 引用vue框架需额外添加div -->
+		<!-- 标题    ctrl+/  快速注释      多选择器需要以空格隔开-->
+		<div class="index">
+			<a href="http://aitags.fun/" class="watch tiaozhuan" title="现已不可用"><b>Pic Create</b></a>
+			<a href="../index.html" class="watch page"><b>Index</b></a> 
+			<a	href="BlogMain.html" class="watch page" id="top1"><b>Blog</b></a> 
+		</div>
+
+		<!-- 展示图部分 -->
+		<div :class="PicName">
+
+			<!-- ctrl+d是可多选，一起改的快捷键 -->
+			<div class="singlestyle bg1" @click="changePic(1)">
+			<p>Sec.1</p>
+
+			<!-- 下面跟的图片不是作为背景用的 -->
+			<!-- <img src="ShowImgs/add.png"> -->
+			</div>
+
+			<div class="singlestyle bg2" @click="changePic(2)">
+			<p>Sec.2</p>
+			<!-- <img src="ShowImgs/Sec2.png" width="256" height="512"> -->
+			</div>
+
+			<div class="singlestyle bg3" @click="changePic(3)"> 
+			<p>Sec.3</p>
+			<!-- <img src="ShowImgs/Sec3.png" width="256" height="512"> -->
+			</div>
+
+			<div class="singlestyle bg4" @click="changePic(4)">
+			<p>Sec.4</p>
+			<!--<img src="ShowImgs/Sec4.png" width="256" height="512"> -->
+			</div>
+
+			<div class="singlestyle bg5" @click="changePic(5)">
+			<p>Sec.5</p>
+			<!--<img src="ShowImgs/Sec5.png" width="256" height="512">-->	
+			</div>
+
+		</div>
+
+		<!-- 百叶窗   ul标签，无序列表 -->
+		<div>
+			<ul style="padding: 0;"><!-- /*占满，抵掉原有样式*/ -->
+				<!-- li 也是无序列表标签 此处为单个百叶窗页面 -->
+				<li :class="Pic1">   
+					<!-- class前加： 是将class内的pic1当作了变量 需要在下面data处定义 -->
+				    <!--  float 浮动 强制 绝对定位，此处作用为锁定其字体宽度 -->
+				    <!-- 注意：竖条高度有一定的限制，缩小2到3px使其不出现意外情况 -->
+				    <!-- i标签，一种斜体 -->        
+				    <!-- @click 点击事件 触发背景图片的更换 为了达成百叶窗效果 -->
+					<div class="BaiYeLan" style="float:left" @click="changeImg(1)">
+						<i>图片1</i>
+					</div>
+					<div class="BaiYeLan" style="float:right;" @click="changeImg(5)">
+						<i>5</i>
+					</div>
+					<div class="BaiYeLan" style="float:right;" @click="changeImg(4)">
+						<i>4</i>
+					</div>
+					<div class="BaiYeLan" style="float:right;" @click="changeImg(3)">
+						<i>3</i>
+					</div>
+					<div class="BaiYeLan" style="float:right;" @click="changeImg(2)">
+						<i>2</i>
+					</div>
+				</li>
+
+	            <!-- 第二扇 -->
+				<li :class="Pic2">
+					<div class="BaiYeLan" style="float:left;" @click="changeImg(1)">
+						<i>图片1</i>
+					</div>
+					<div class="BaiYeLan" style="float:left;" @click="changeImg(2)">
+						<i>2</i>
+					</div>
+					<div class="BaiYeLan" style="float:right;" @click="changeImg(5)">
+						<i>5</i>
+					</div>
+					<div class="BaiYeLan" style="float:right;" @click="changeImg(4)">
+						<i>4</i>
+					</div>
+					<div class="BaiYeLan" style="float:right;" @click="changeImg(3)">
+						<i>3</i>
+					</div>
+				</li>
+	 
+				<!-- 第三扇 -->
+				<li :class="Pic3">
+					<div class="BaiYeLan" style="float:left;" @click="changeImg(1)">
+						<i>图片1</i>
+					</div>
+					<div class="BaiYeLan" style="float:left;" @click="changeImg(2)">
+						<i>2</i>
+					</div>
+					<div class="BaiYeLan" style="float:left;" @click="changeImg(3)">
+						<i>3</i>
+					</div>
+					<div class="BaiYeLan" style="float:right;" @click="changeImg(5)">
+						<i>5</i>
+					</div>
+					<div class="BaiYeLan" style="float:right;" @click="changeImg(4)">
+						<i>4</i>
+					</div>
+				</li>
+
+				<!-- 第四扇 -->
+				<li :class="Pic4">
+					<div class="BaiYeLan" style="float:left;" @click="changeImg(1)">
+						<i>图片1</i>
+					</div>
+					<div class="BaiYeLan" style="float:left;" @click="changeImg(2)">
+						<i>2</i>
+					</div>
+					<div class="BaiYeLan" style="float:left;" @click="changeImg(3)">
+						<i>3</i>
+					</div>
+					<div class="BaiYeLan" style="float:left;" @click="changeImg(4)">
+						<i>4</i>
+					</div>
+					<div class="BaiYeLan" style="float:right;" @click="changeImg(5)">
+						<i>5</i>
+					</div>
+				</li>
+
+				<!-- 第五扇 -->
+				<li :class="Pic5">
+					<div class="BaiYeLan" style="float:left;" @click="changeImg(1)">
+						<i>图片1</i>
+					</div>
+					<div class="BaiYeLan" style="float:left;" @click="changeImg(2)">
+						<i>2</i>
+					</div>
+					<div class="BaiYeLan" style="float:left;" @click="changeImg(3)">
+						<i>3</i>
+					</div>
+					<div class="BaiYeLan" style="float:left;" @click="changeImg(4)">
+						<i>4</i>
+					</div>
+					<div class="BaiYeLan" style="float:left;" @click="changeImg(5)">
+						<i>5</i>
+					</div>
+				</li>
+
+
+			</ul>
+		</div>
+
+
+		<!-- 介绍部分 -->
+		<div class="introduce">
+			<!-- 一些注释，p标签一般写段落，其连着两个p标签写会出现空；div一般做容器，连着不会出现空，两者均为块元素，（需要一块区域，可能不是一行那么简单），h标签为标题类的，自己本身为粗体，<h1>最大依次向下减小,   <br/>文本段落换行用  -->
+			<h1><a href="http://aitags.fun/profile.aspx?name=Telescope" class="IntroduceTitleSet">
+			My Beautiful Pic Show</a></h1>
+			<p class="IntroduceTextSet">这是一段介绍这是一段介绍这是一段介绍这是一段介绍这是一段介绍这是一段介绍这是一段介绍这是一段介绍这是一段介绍<br/>使用网站绘制，该网站现已停用<br/>2022</p>
+		</div>
+
+		<!-- 附加1 -->
+		<div class="extraAdd">
+			<a href="https://space.bilibili.com/326979989" class="extraHead"><img src="ShowImgs/hp.png" class="HeadImg"></a>
+			<div>
+				<h1><a href="https://space.bilibili.com/326979989" class="AddPartTit">个人账号</a></h1>
+				<p class="AddPartText">bilibili小号<br/>不定时投稿<br/>
+				点击图片和按钮均可跳转</p>
+
+				<button class="extraBtn" onclick="window.location.href ='https://space.bilibili.com/326979989'">点击跳转</button>
+
+			</div>
+		</div>
+
+		<!-- 底部链接部分 扩展 推广部分 -->
+		<div class="bottomSet">
+			<div>
+				<a href="MainIndex.html" ><h2>首页</h2></a>
+				<a href="#top1" style="font-size: 15px;color: #CAC2D8;line-height: 15px; ">
+				点我返回顶部</a>
+			</div>
+			<div>
+				<h2>联系</h2>
+				<p>练习用</p>
+			</div>
+			<div>
+				<h2>关于</h2>
+				<p>这是介绍</p>
+			</div>
+			<div>
+				<img src="ShowImgs/QRcode.png" alt="二维码">
+				<h3 class="QRcodeSet">扫我啊~~</h3>
+			</div>
+		</div>
+
+		<!-- 其他部分待添加 -->
+		<p class="other" style="color: pink;">༺༽Maid༼༻</p>
+		<p class="other">AI Pic Show</p>
+		
+		
+		<a id="bottom"></a><!-- 底部标点 -->
+	
+	</div>
+</body>
+
+<!-- JavaScript -->
+<script src="js/vue.min.js"></script>  <!-- 引入vue框架 -->
+<script type="text/javascript">
+	var vm=new Vue({
+			el:'#app',
+			data:{
+				//单引号内对应的都是方法	全为css中已经写过的
+				PicName:'Allinstyle',
+				Pic1:'Pic1',
+				Pic2:'Pic2',
+				Pic3:'Pic3',
+				Pic4:'Pic4',
+				Pic5:'Pic5'
+			},
+		methods:{
+				changePic(e) {
+					//console.log(111);
+					this.PicName = 'Allinstyle change';
+					if(e === 1){
+						this.Pic1 = 'Pic1 changeBlock';
+					}else if(e === 2){
+						this.Pic2 = 'Pic2 changeBlock';
+					}else if(e === 3){
+						this.Pic3 = 'Pic3 changeBlock';
+					}else if(e === 4){
+						this.Pic4 = 'Pic4 changeBlock';
+					}else{
+						this.Pic5 = 'Pic5 changeBlock';
+					}
+				},
+				changeImg(e) {
+					this.Pic1 = 'Pic1';
+					this.Pic2 = 'Pic2';
+					this.Pic3 = 'Pic3';
+					this.Pic4 = 'Pic4';
+					this.Pic5 = 'Pic5';
+					if(e === 1){
+						this.Pic1 = 'Pic1 changeBlock';
+					}else if(e === 2){
+						this.Pic2 = 'Pic2 changeBlock';
+					}else if(e === 3){
+						this.Pic3 = 'Pic3 changeBlock';
+					}else if(e === 4){
+						this.Pic4 = 'Pic4 changeBlock';
+					}else{
+						this.Pic5 = 'Pic5 changeBlock';
+					}
+				},
+		}
+	})
+	
+	// 下为 js实现鼠标悬浮是改变，离开时返回
+	// 其仍有 vue, jquery ,等方式实现，此处采用css  直接在 bg1 css处添加hover  方式
+	// function over(x){
+	// 	x.style.background="pink";
+	// }
+	// function leave(x){
+	// 	x.style.background="url('ShowImgs/Sec1.png')";
+	// 	x.style.backgroundSize="cover";
+	// }
+
+
+</script>
+
+</html>

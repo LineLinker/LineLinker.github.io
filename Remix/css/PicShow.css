@@ -1,0 +1,280 @@
+	/*下为css部分 拆分出来  
+	需要在html文件中加入link标签 并将herf指向该文件
+	拆分需注意在css中引用图片了需要用../
+	来出文件夹 才可以正常使用*/
+
+	/*滑动栏重写*/
+	::-webkit-scrollbar{
+    	width: 8px;/* 设置滚动条宽度 */
+	}
+	::-webkit-scrollbar-thumb{
+   		 background: rgba(61, 52, 58, 0.8);/* 设置滚动条滑块背景颜色 */
+	}
+	::-webkit-scrollbar-track{
+    	background: rgb(194, 213, 241);/* 设置滚动条轨道背景颜色 */
+	}
+
+	/*通用的，去除链接文字下的下划线*/
+	a{
+		text-decoration:none;
+	}
+	/*margin为外边距，padding为内边距*/
+	/*注：多选择器的顺序在css中有影响，但在html中无影响*/
+	.bodys{	
+		margin: 0px;
+		background: #3D343A;
+	}
+	.watch{
+		color: pink;
+		font-size: 20px;
+		/*外边距*/
+		margin: 28px;
+		font-family: "Consolas";
+	}
+	.tiaozhuan{
+		/*去除超链接处下划线*/
+		/*text-decoration: none;*/
+		/*调整两栏之间间距*/
+		margin-left: 15%;
+		font-family: "Consolas";
+	}
+	/*针对page  做样式更改   此处做命名*/
+	.page{
+		
+		/*调整两栏之间间距*/
+		margin-left: 25%
+	}
+	.index{
+		/*弹性盒子*/
+		display: flex;
+	}
+
+	/*图片展示区*/
+	.Allinstyle{
+		display: flex;
+		background: white;
+		height: 756px;
+		width: 100%;
+	}
+	.singlestyle{
+		/*flex对每块占比进行区分*/
+		flex: 1;
+		/*画一个白色竖分直线*/
+		border-right:  1px solid white; 
+		/*中心对齐文字*/
+		text-align: center;
+		/*内边距，使文字完美居中*/
+		padding-top: 360px;
+	}
+	.singlestyle p{
+		font-size: 25px;
+		color: pink;
+		font-family: "Consolas";/*字体样式*/
+	}
+	.bg1{
+		background: url("../ShowImgs/Sec1.png");
+		background-size:cover;
+	}
+	.bg1:hover{
+		/*background:url("../ShowImgs/Sec2.png");*/
+		background: pink;/*暂定*/
+		/*to do此处做成改变图片  来个choose me ?  给个跳转*/
+	}
+	.bg2:hover{
+		/*background:url("../ShowImgs/Sec2.png");*/
+		background: blue;/*暂定*/
+		/*to do此处做成改变图片  来个choose me ?  给个跳转*/
+	}
+	.bg3:hover{
+		/*background:url("../ShowImgs/Sec2.png");*/
+		background: white;/*暂定*/
+		/*to do此处做成改变图片  来个choose me ?  给个跳转*/
+	}
+	.bg4:hover{
+		/*background:url("../ShowImgs/Sec2.png");*/
+		background: yellow;/*暂定*/
+		/*to do此处做成改变图片  来个choose me ?  给个跳转*/
+	}
+	.bg5:hover{
+		/*background:url("../ShowImgs/Sec2.png");*/
+		background: black;/*暂定*/
+		/*to do此处做成改变图片  来个choose me ?  给个跳转*/
+	}
+	.bg2{
+		background: url("../ShowImgs/Sec2.png");
+		background-size:cover;
+	}
+	.bg3{
+		background: url("../ShowImgs/Sec3.png");
+		background-size:cover;
+	}
+	.bg4{
+		background: url("../ShowImgs/Sec4.png");
+		background-size:cover;
+	}
+	.bg5{
+		background: url("../ShowImgs/Sec5.png");
+		background-size:cover;
+	}
+	/*介绍区*/
+	.introduce{
+		background: url("../ShowImgs/Logo.png");
+		background-size:50% 100%;
+		text-align: center;
+		padding:80px 0px;
+		margin-top: 20px;
+	}
+	.IntroduceTitleSet{
+		color: pink;
+		font-family: "Consolas";
+	}
+	.IntroduceTextSet{
+		font-size: 20px;
+		color: #8FA1B0;
+		font-family: "仿宋";
+		line-height: 40px;/*行高*/
+	}
+	/*下为附加区css*/
+	.extraAdd{
+		display: flex;
+		background:#E7627E;
+		margin: 20px 0px;
+	}
+	.HeadImg{
+		widows: 256px;
+		height: 256px;
+		/*裁剪图片的边角  以圆弧的形式*/
+		border-radius: 135px;
+	}
+	.extraHead{
+		margin: 50px 50px 50px 50px;
+	}
+	.AddPartTit{
+		margin-top: 70px;
+		color: #FCDDDF;
+		font-family: "等线";
+	}
+	.AddPartText{
+		font-size: 20px;
+		color: #483E50;
+		font-family: "Consolas";
+		line-height: 40px;/*行高*/
+	}
+	.extraBtn{
+		background: white;
+		color: #E7627E;
+		padding: 5px 50px;
+		font-family: "微软雅黑";
+		font-size: 20px;
+		border-radius: 25px;
+	}
+	/*底部区域设定*/
+	.bottomSet{
+		display: flex;
+		width: 80%;
+		margin: 0 auto;/*边框设置*/
+	}
+	.bottomSet div{
+		flex: 1;/*划分区域*/
+		margin-top: 50px;
+	}
+	.bottomSet h2{
+		font-size: 25px;
+		color: #E7627E;
+		font-family:"楷体";
+		line-height: 15px; 
+	}
+	.bottomSet p{
+		font-size: 15px;
+		color: #CAC2D8;
+		line-height: 15px; 
+	}
+	.QRcodeSet{
+		color: #CAC2D8;
+		margin-left: 30%
+	}
+	.bottomSet img{
+		width: 80%;
+		height: 80%;
+	}
+	.other{
+		background-color: black;
+		color: white;
+		text-align: center;
+		margin: 0;/*使其占满*/
+		padding:10px;
+	}
+	/*百叶窗部分*/
+	.Pic1{
+		background:url("../ShowImgs/Pic1.png");
+		background-size: cover;
+		margin-top: 0px;
+		height: 720px;
+		display: none;
+	}
+	.Pic2{
+		background:url("../ShowImgs/Pic2.png");
+		/*background:url(../);*/
+		background-size: cover;
+		margin-top:0px;
+		height: 720px;
+		display: none;
+	}
+	.Pic3{
+		background:url("../ShowImgs/Pic3.png");
+		background-size: cover;
+		margin-top: 0px;
+		height: 720px;
+		display: none;
+	}
+	.Pic4{
+		background:url("../ShowImgs/Pic4.png");
+		background-size: cover;
+		margin-top: 0px;
+		height: 720px;
+		display: none;
+	}
+	.Pic5{
+		background:url("../ShowImgs/Pic5.png");
+		background-size: cover;
+		margin-top: 0px;
+		height: 720px;
+		display: none;
+	}
+
+	.BaiYeLan{
+		/*设置边框*/
+		border:1px solid rgba(255,255,255,0.2);
+		background: rgba(0,0,0,0.2);  /*百叶窗竖条透明背景*/
+		width:40px;
+		height: 718px;
+		animation-delay: zoom 500ms ease-in-out;/*动画效果*/
+	}
+	.BaiYeLan i{
+		font-family: "Consolas";
+		font-size: 20px;
+		/*color: #ECCFBF;肉色测试*/
+		color: #A35097;
+		width: 20px;
+		/*绝对定位  此处额外解释 绝对定位是相对于整个页面的定位，
+		相对定位是相对该东西的原有位置的定位   对于该定位语句下的其他操作均生效*/
+		position: absolute;
+		padding-left: 10px;
+		padding-top: 300px;/*竖条中文字距离竖条顶端的位置*/
+	}
+	.change{
+		/*使某部分消失不见*/
+		display: none;
+	}
+	.changeBlock{
+		/*使某部分显示*/
+		display: block;
+	}
+	@keyframes BaiYeLan{
+		0%{
+			opacity: 0;/*透明度*/	
+		}
+		100%{
+			opacity: 1;/*透明度*/	
+		}
+	}

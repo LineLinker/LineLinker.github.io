@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="../IndexImg/logo1.ico">
+	<title>练习</title>
+</head>
+<style>
+	/*通用的，去除链接文字下的下划线*/
+	a{
+		text-decoration:none;
+	}
+</style>
+<body>
+	<p align="center" ><a href="https://www.w3school.com.cn/" title="点我前往" >学习html请前往w3School</a></p>
+	<p align="center">该页面为练习页面 完成表格</p>
+	<div align="center" width="800px" height="800px">
+		<img src="showImgs/作业目标.png">
+	</div>
+	<p align="center">上为图片</p>
+	<hr>
+	<p align="center">下为实际效果</p>
+
+<form>
+	<table align="center" border="1px solid" border-collapse="collapse"  border-spacing="0" bordercolor="#7CA7D3" width="1200px"> <!-- border-left="1px solid" border-top="1px solid" -->
+	
+		<th colspan="2" bgcolor="#7CA7D3">新用户注册</th>
+		<tr>
+			<td width="600px"><b>用户名(昵称)：</b><br>注册用户名不能超过20个字符(10个汉字)，论坛中使用
+			</td>
+			<td><input type="text" name="username" id="1" style="width: 100px; border: 2px solid red;">
+					<input type="button" value="检测账号">
+			</td>
+		</tr>
+		<tr>
+			<td><b>性别：</b></td>
+			<td>
+				<input type="radio" name="sex" value="man" checked>
+				<img src="showImgs/boy.jpg" width="23px">男
+				<input type="radio" name="sex" value="woman">
+				<img src="showImgs/boy.jpg" width="23px">女
+				<input type="radio" name="sex" value="secret">不说
+			</td>
+		</tr>
+		<tr>
+			<td><b>密码(至少6位):</b><br>请输入，注意区分大小写</td>
+			<td><input type="password" name="password"></td>
+		</tr>
+		<tr>
+			<td><b>确认密码：</b><br>请再次输入密码</td>
+			<td><input type="password" name="password"></td>
+		</tr>
+		<tr>
+			<td><b>真实姓名：</b></td>
+			<td><input type="text" name="reallyname"></td>
+		</tr>
+		<tr>
+			<td><b>身份证号码：</b></td>
+			<td><input type="text" name="number"></td>
+		</tr>
+		<tr>
+			<td><b>国家：</b></td>
+			<td>
+				<select name="country">
+					<option value="1" selected>中国</option>
+					<option value="2">美国</option>
+					<option value="3">英国</option>
+					<option value="4">澳大利亚</option>
+					<option value="5">日本</option>
+					<option value="6">韩国</option>
+				</select>
+		</tr>
+		<tr>
+			<td><b>地区：</b></td>
+			<td>
+				<select name="area">
+					<option value="1" selected>北京</option>
+					<option value="2">上海</option>
+					<option value="3">河南</option>
+					<option value="4">内蒙古</option>
+					<option value="5">河北</option>
+					<option value="6">广东</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td><b>职业：</b></td>
+			<td>
+				<select name="work">
+					<option value="1" selected>学生</option>
+					<option value="2">老师</option>
+					<option value="3">工人</option>
+					<option value="4">商人</option>
+					<option value="5">司机</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td><b>文化程度：</b></td>
+			<td>
+				<select name="learn">
+					<option value="1" selected>小学</option>
+					<option value="2">初中</option>
+					<option value="3">高中</option>
+					<option value="4">大学</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td><b>是否公开注册信息：</b></td>
+			<td>
+				<select name="Ispublic">
+					<option value="1" checked>是</option>
+					<option value="2">否</option>
+				</select>
+				<br>
+				<input type="submit" name="register" value="提交查询内容">
+				<input type="reset" name="reset" value="重置"/> 
+			</td>
+		</tr>
+		<tr>
+			<td><b>Eamil地址：</b><br>请输入有效的邮件地址</td>
+			<td>
+				<input type="text" name="adress" 
+				style="width: 400px; border: 2px solid red;">
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center">
+  			<input type="submit" name="register" value="注册">
+  			<input type="reset" name="reset" value="清除"/>  
+  		</td>
+		</tr>
+
+	</table>
+</form>
+	
+<p align="center"><strike>完整代码参考F12   未使用css文件和js文件</strike></p>
+
+	
+</body>
+</html>

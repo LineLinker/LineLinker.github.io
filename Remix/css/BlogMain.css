@@ -1,0 +1,122 @@
+
+	/*div{
+		display: block;
+	}*/
+	a{
+		text-decoration: none;
+	}
+	.bodySet{
+		margin: 0px;
+		background: #3D343A;
+		
+	}
+	.Title{
+		display: flex;
+	}
+	.LogoPic{
+		float: right; 
+		height: 125px;
+		width: 125px;
+	}
+	.OfTitle1{
+		margin-top: 30px;
+		margin-left: 120px;
+		margin-right: 120px;
+		font-size: 20px;
+	}
+
+
+
+	/*新版，采用嵌套表格内*/
+	form .text {
+				display: inline-block;
+				border: 0;
+				width: 600px;
+				height: 36px;
+				font-family: "Consolas";
+				font-size: 14px;
+				outline: none;
+				border: 2px solid #3D343A;/*最后跟的是边框颜色*/
+
+			}
+			
+	form .search {
+				
+				width: 150px;
+				height: 38px;
+				border: 0;
+				outline: none;
+				cursor: pointer;
+				text-align: center;
+				line-height: 40px;
+				background-color: #3D343A;
+				font-family: "Consolas";
+				color: white;
+			}
+
+
+	/*底部样式*/
+	.other{
+		background-color: black;
+		color: white;
+		text-align: center;
+		margin: 0;/*使其占满*/
+		padding:10px;/*内部间隔20*/
+	}
+
+    /*下面暂时弃用*/
+	/*搜索框部分 由于抄的浏览器默认 抄不完善*/
+	/*.searchContainer{
+
+		color: #333;
+	}
+	.searchLogo{
+		background: url("../ShowImgs/BaiduLogo.png");
+		background-position: center;
+		background-size: 320px 120px;
+		background-repeat: no-repeat;
+		text-align: center;
+		width: 320px;
+		height: 100px;
+		margin: 0 auto 10px;
+	}
+	.searchMian{
+		display: flex;
+		position: relative;
+	}
+	.searchInput{
+		flex: 1;
+	}
+	.InputArea{
+		box-sizing: border-box;
+		width: 100%;
+		height: 40px;
+		padding: 0 80px 0 15px;
+		border: 1px solid #ccc;
+		border-right: 0;
+		border-radius: 4px 0 0 4px;
+		outline: none;
+		font-size: 15px;
+		background-color: #fff;
+	}
+	.searchEngine{
+		position: absolute;
+		right: 120px;
+		top: 0px;
+		user-select: none;
+	}*/
+	/*.searchEngine-btn{
+		overflow: hidden;
+		cursor: pointer;
+		width: 65px;
+		height: 46px;
+		line-height: 46px;
+		font-size: 12px;
+		color: black;
+
+		/*padding: 0 35px 0 0;
+		text-align: right;*/
+	
+
+	
+	
